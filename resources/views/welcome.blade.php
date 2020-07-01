@@ -1,13 +1,13 @@
 @extends('layouts.app', ['class' => 'bg-default'])
 
 @section('content')
-    <div class="header bg-white p-3">
+    <div class="header bg-white py-7 py-lg-8">
         <div class="container">
             <div class="header-body text-center mt-7 mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-success">
-                            Welcome to Federal Government Staff Housing Loans Board..
+                        <h1 class="text-success display-2">
+                            Welcome to Platinum Express
 
 
 
