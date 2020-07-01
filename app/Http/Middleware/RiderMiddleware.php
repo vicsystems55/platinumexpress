@@ -15,6 +15,15 @@ class RiderMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::check() && Auth::user()->role == "rider"){
+
+            return $next($request); 
+        }
+
+        else{
+
+            abort(403);
+        }
+
     }
 }

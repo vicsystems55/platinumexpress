@@ -98,7 +98,7 @@
                     <div class="collapse show" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link {{ (request()->is('user/loans')) ? 'active' : '' }}" href="{{ route('user.loans')}}">
+                                <a class="nav-link {{ (request()->is('user/loans')) ? 'active' : '' }}" href="">
                                     {{ __('Loans') }}
                                 </a>
                             </li>

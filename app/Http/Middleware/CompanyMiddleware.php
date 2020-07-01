@@ -17,7 +17,7 @@ class PartnersMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role == "partner"){
+        if(Auth::check() && Auth::user()->role == "company"){
 
                return $next($request); 
         }

@@ -20,7 +20,7 @@
                             @csrf
 
                         
-                            <input type="hidden" name="role" value="partner">
+                            <input type="hidden" name="role" value="company">
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
