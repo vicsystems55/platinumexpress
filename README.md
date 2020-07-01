@@ -1,2 +1,0 @@
-# platinumexpress
-Logistics Management System
