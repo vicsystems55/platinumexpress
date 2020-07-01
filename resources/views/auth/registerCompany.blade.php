@@ -3,21 +3,24 @@
 @section('content')
     @include('layouts.headers.guest')
 
+  
+
     <div class="container mt--8 pb-5">
         <!-- Table -->
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent p-2">
-                        <div class="text-muted text-center mt-2 mb-4"><h1>Create a Standard User Account</h1></div>
+                        <div class="text-muted text-center mt-2 mb-4"><h1>{{ __('Create a Partner Account') }}</h1></div>
                         
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
                         
                         <form role="form" method="POST" action="{{ route('register') }}">
                             @csrf
-                            <input type="hidden" name="type" value="standard">
-                            <input type="hidden" name="role" value="user">
+
+                        
+                            <input type="hidden" name="role" value="partner">
                             <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
@@ -31,6 +34,7 @@
                                     </span>
                                 @endif
                             </div>
+
                             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative mb-3">
                                     <div class="input-group-prepend">
@@ -44,6 +48,28 @@
                                     </span>
                                 @endif
                             </div>
+
+                            <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
+                                <div class="input-group input-group-alternative mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                                    </div>
+                                    
+                                    <select class="form-control" name="type" id="" required>
+                                        <option value="">--select category--</option>
+                                        <option value="gold">Bronze (N 150,000)</option>
+                                        <option value="silver">Silver (N 250, 000)</option>
+                                        <option value="bronze">Gold (N 300, 000)</option>
+                                        
+                                    </select>
+                                </div>
+                                @if ($errors->has('type'))
+                                    <span class="invalid-feedback" style="display: block;" role="alert">
+                                        <strong>{{ $errors->first('type') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">

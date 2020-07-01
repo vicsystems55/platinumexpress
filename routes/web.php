@@ -23,9 +23,17 @@ Route::get('/reg', function () {
     return view('auth.registerType');
 })->name('reg');
 
-Route::get('/registerPartners', function () {
-    return view('auth.registerPartners');
-})->name('registerPartners');
+Route::get('/registerCompany', function () {
+    return view('auth.registerCompany');
+})->name('registerCompany');
+
+Route::get('/registerRider', function () {
+    return view('auth.registerRider');
+})->name('registerRider');
+
+Route::get('/registerCompany', function () {
+    return view('auth.registerCompany');
+})->name('registerCompany');
 
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
 
@@ -59,13 +67,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth','admin']], function()
 
 
 
-Route::group(['middleware' => ['auth','partner', 'verified'], 'prefix' => 'partners'], function(){
+Route::group(['middleware' => ['auth','company', 'verified'], 'prefix' => 'company'], function(){
 
-    Route::get('/', 'PartnersPageController@home')->name('partners');
-	Route::get('/profile', 'PartnersPageController@profile')->name('partners.profile');
-	Route::get('/portfolio', 'PartnersPageController@portfolio')->name('partners.portfolio');
-	Route::get('/notifications', 'PartnersPageController@notifications')->name('partners.notifications');
-	Route::get('/reports', 'PartnersPageController@reports')->name('partners.reports');
+    Route::get('/', 'CompanyPageController@home')->name('company');
+	Route::get('/profile', 'CompanyPageController@profile')->name('company.profile');
+	Route::get('/portfolio', 'CompanyPageController@portfolio')->name('company.portfolio');
+	Route::get('/notifications', 'CompanyPageController@notifications')->name('company.notifications');
+	Route::get('/reports', 'CompanyPageController@reports')->name('company.reports');
 
     
 });
@@ -74,20 +82,20 @@ Route::group(['middleware' => ['auth','user', 'verified'], 'prefix' => 'user'], 
 
     Route::get('/', 'UserPageController@home')->name('user');
 	Route::get('/profile', 'UserPageController@profile')->name('user.profile');
-	Route::get('/loan', 'UserPageController@loans')->name('user.loans');
+	
 	Route::get('/notifications', 'UserPageController@notifications')->name('user.notifications');
 	Route::get('/wallet', 'UserPageController@wallet')->name('user.wallet');
 
     
 });
 
-Route::group(['middleware' => ['auth','gurantor'], 'prefix' => 'gurantor'], function(){
+Route::group(['middleware' => ['auth','rider'], 'prefix' => 'rider'], function(){
 
-    Route::get('/', function () { return view('gurantor.home'); })->name('gurantor');
-	Route::get('/profile', function () { return view('gurantor.profile'); })->name('gurantor.profile');
-	Route::get('/loan', function () { return view('gurantor.loans'); })->name('gurantor.loans');
-	Route::get('/notifications', function () { return view('gurantor.notifications'); })->name('gurantor.notifications');
-	Route::get('/wallet', function () { return view('gurantor.wallet'); })->name('gurantor.wallet');
+    Route::get('/', 'RiderPageController@home')->name('rider');
+	Route::get('/profile', 'RiderPageController@profile')->name('rider.profile');
+	
+	Route::get('/notifications', 'RiderPageController@home')->name('rider.notifications');
+	Route::get('/wallet', 'RiderPageController@home')->name('rider.wallet');
 
     
 });
