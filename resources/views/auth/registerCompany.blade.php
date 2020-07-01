@@ -11,7 +11,7 @@
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent p-2">
-                        <div class="text-muted text-center mt-2 mb-4"><h1>{{ __('Create a Partner Account') }}</h1></div>
+                        <div class="text-muted text-center mt-2 mb-4"><h1>{{ __('Create a Membership Account') }}</h1></div>
                         
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
