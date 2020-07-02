@@ -99,7 +99,7 @@
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
                                 <a class="nav-link {{ (request()->is('user/loans')) ? 'active' : '' }}" href="">
-                                    {{ __('Loans') }}
+                                    {{ __('Orders') }}
                                 </a>
                             </li>
                             <li class="nav-item">

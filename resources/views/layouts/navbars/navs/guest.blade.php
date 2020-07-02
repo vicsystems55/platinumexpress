@@ -1,6 +1,6 @@
 <nav class="navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark bg-white">
     <div class="container px-4">
-        <a class="navbar-bran" href="{{ route('home') }}">
+        <a class="navbar-brand" href="{{ route('home') }}">
             <img class="img-responsive" src="{{ asset('argon') }}/img/brand/bluee.png" />
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-main" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
